@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090a0d">
+    <meta name="description" content="I-SRAVIA is an accessibility technology company exploring Indian Sign Language, computer vision and voice technology.">
+    <title>I-SRAVIA — Breaking communication barriers</title>
+    <link rel="canonical" href="https://YOUR-DOMAIN/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- Link preview (WhatsApp, LinkedIn, Facebook, X, Slack, iMessage) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="I-SRAVIA">
+    <meta property="og:title" content="I-SRAVIA — Break the wall of silence">
+    <meta property="og:description" content="An accessibility technology company exploring Indian Sign Language, computer vision and voice technology.">
+    <meta property="og:url" content="https://YOUR-DOMAIN/">
+    <meta property="og:image" content="https://YOUR-DOMAIN/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="I-SRAVIA logo with the tagline Break the wall of silence">
+    <meta property="og:locale" content="en_IN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="I-SRAVIA — Break the wall of silence">
+    <meta name="twitter:description" content="An accessibility technology company exploring Indian Sign Language, computer vision and voice technology.">
+    <meta name="twitter:image" content="https://YOUR-DOMAIN/assets/og-image.jpg">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "I-SRAVIA",
+        "alternateName": "Indian Sign-Language Responsive & Voice Intelligent Assistant",
+        "url": "https://YOUR-DOMAIN/",
+        "logo": "https://YOUR-DOMAIN/assets/icon-192.png",
+        "email": "project.isravia@gmail.com",
+        "sameAs": ["https://in.linkedin.com/company/i-sravia"]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/school-visit-classroom.webp" type="image/webp">
+    <!-- Fonts load without blocking first paint -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"></noscript>
+    <script src="analytics.js" defer></script>
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #090a0d;
+            --surface: #111318;
+            --surface-raised: #17191f;
+            --ink: #f5f2ed;
+            --muted: #aaa8a3;
+            --subtle: #777a82;
+            --line: rgba(255, 255, 255, 0.1);
+            --orange: #ff8a36;
+            --orange-light: #ffb16e;
+            --violet: #8c82db;
+            --sans: "DM Sans", "Segoe UI", sans-serif;
+            --display: "Playfair Display", Georgia, serif;
+            --content-width: 1160px;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 138, 54, 0.035);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden; /* fallback for Safari < 16 */
+            overflow-x: clip;
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background:
+                radial-gradient(ellipse at 82% 9%, rgba(84, 63, 117, 0.12), transparent 34rem),
+                var(--bg);
+            color: var(--ink);
+            font-family: var(--sans);
+            font-size: 16px;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 3px solid var(--orange-light);
+            outline-offset: 4px;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .container {
+            width: min(var(--content-width), calc(100% - 48px));
+            margin-inline: auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            border-bottom: 1px solid var(--line);
+            background: rgba(9, 10, 13, 0.86);
+            -webkit-backdrop-filter: blur(18px);
+            backdrop-filter: blur(18px);
+        }
+
+        .nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .js-enabled .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 520ms ease, transform 520ms ease;
+            transition-delay: var(--reveal-delay, 0ms);
+        }
+
+        .js-enabled .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .js-enabled .workflow-card.reveal.is-visible:hover,
+        .js-enabled .impact-card.reveal.is-visible:hover,
+        .js-enabled .feature-card.reveal.is-visible:hover,
+        .js-enabled .involved-card.reveal.is-visible:hover,
+        .js-enabled .resource-card.reveal.is-visible:hover,
+        .js-enabled .gallery-item.reveal.is-visible:hover,
+        .js-enabled .team-card.reveal.is-visible:hover {
+            transform: translateY(-3px);
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            color: var(--ink);
+            font-family: var(--display);
+            font-size: 1.02rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .brand img {
+            width: 62px;
+            height: 62px;
+            display: block;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: clamp(16px, 2.4vw, 30px);
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.86rem;
+            text-decoration: none;
+            transition: color 160ms ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange-light);
+        }
+
+        .nav-links .nav-contact {
+            display: none;
+            color: #17100a;
+        }
+
+        .nav-links .nav-contact:hover {
+            color: #17100a;
+        }
+
+        .button {
+            min-height: 45px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 11px 18px;
+            border: 1px solid var(--orange);
+            border-radius: 5px;
+            background: var(--orange);
+            color: #17100a;
+            font-size: 0.9rem;
+            font-weight: 700;
+            line-height: 1.25;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 200ms ease, background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            border-color: var(--orange-light);
+            background: var(--orange-light);
+            box-shadow: 0 7px 22px rgba(255, 138, 54, 0.16);
+        }
+
+        .button-secondary {
+            border-color: var(--line);
+            background: rgba(255, 255, 255, 0.035);
+            color: var(--ink);
+        }
+
+        .button-secondary:hover {
+            border-color: rgba(255, 138, 54, 0.6);
+            background: rgba(255, 138, 54, 0.08);
+            color: var(--orange-light);
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--line);
+            border-radius: 5px;
+            background: transparent;
+            color: var(--ink);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 17px;
+            color: var(--orange-light);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            width: 24px;
+            height: 1px;
+            background: currentColor;
+            content: "";
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1,
+        .section-heading h2 {
+            font-family: var(--display);
+            font-weight: 500;
+            letter-spacing: -0.035em;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            padding: 70px 0 78px;
+            isolation: isolate;
+        }
+
+        .hero::before {
+            position: absolute;
+            z-index: -1;
+            inset: 0 calc((min(100vw, var(--content-width)) - 100vw) / 2);
+            background-image:
+                radial-gradient(1px 1px at 10% 18%, rgba(255, 255, 255, 0.7) 50%, transparent 100%),
+                radial-gradient(1px 1px at 22% 72%, rgba(255, 177, 110, 0.65) 50%, transparent 100%),
+                radial-gradient(1px 1px at 44% 34%, rgba(255, 255, 255, 0.55) 50%, transparent 100%),
+                radial-gradient(1px 1px at 62% 80%, rgba(255, 255, 255, 0.5) 50%, transparent 100%),
+                radial-gradient(1px 1px at 78% 24%, rgba(255, 177, 110, 0.6) 50%, transparent 100%),
+                radial-gradient(1px 1px at 91% 60%, rgba(255, 255, 255, 0.55) 50%, transparent 100%);
+            opacity: 0.62;
+            content: "";
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(340px, 0.95fr);
+            align-items: center;
+            gap: clamp(34px, 6vw, 76px);
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 2;
+            animation: fade-up 650ms ease-out both;
+        }
+
+        .hero h1 {
+            max-width: 670px;
+            margin-bottom: 23px;
+            font-size: clamp(3.35rem, 6vw, 5.5rem);
+            line-height: 1.04;
+        }
+
+        .hero h1 em {
+            color: var(--orange);
+            font-style: italic;
+        }
+
+        .hero-description {
+            max-width: 545px;
+            margin-bottom: 27px;
+            color: #b6b5b2;
+            font-size: 1.05rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .project-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin: 24px 0 0;
+            color: var(--subtle);
+            font-size: 0.79rem;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--orange);
+            box-shadow: 0 0 12px rgba(255, 138, 54, 0.8);
+        }
+
+        .hero-photo {
+            position: relative;
+            min-width: 0;
+            margin: 0;
+            padding: 9px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 7px;
+            background: rgba(255, 255, 255, 0.035);
+            animation: fade-up 700ms 100ms ease-out both;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            aspect-ratio: 1.34 / 1;
+            display: block;
+            border-radius: 3px;
+            object-fit: cover;
+            object-position: center 43%;
+        }
+
+        .hero-photo figcaption {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 4px 3px;
+        }
+
+        .hero-photo figcaption strong {
+            color: var(--ink);
+            font-family: var(--display);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .hero-photo figcaption span {
+            color: var(--muted);
+            font-size: 0.74rem;
+        }
+
+        .section {
+            padding: 93px 0;
+        }
+
+        .section-heading {
+            max-width: 690px;
+            margin-bottom: 38px;
+        }
+
+        .section-heading .eyebrow {
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 13px;
+            font-size: clamp(2.35rem, 4vw, 3.65rem);
+            line-height: 1.1;
+        }
+
+        .section-heading > p:last-child {
+            max-width: 610px;
+            margin-bottom: 0;
+            color: var(--muted);
+        }
+
+        .about-overview {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+            align-items: start;
+            gap: clamp(35px, 7vw, 90px);
+        }
+
+        .about-copy p {
+            max-width: 650px;
+            color: var(--muted);
+        }
+
+        .about-copy h2 {
+            max-width: 650px;
+            margin-bottom: 18px;
+            font-family: var(--display);
+            font-size: clamp(2.35rem, 4vw, 3.65rem);
+            font-weight: 500;
+            letter-spacing: -0.055em;
+            line-height: 1.1;
+        }
+
+        .about-copy p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-principles {
+            display: grid;
+            gap: 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .about-principle {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .about-principle strong,
+        .about-principle span {
+            display: block;
+        }
+
+        .about-principle strong {
+            margin-bottom: 3px;
+            color: var(--orange-light);
+            font-family: var(--display);
+            font-size: 0.91rem;
+        }
+
+        .about-principle span {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid var(--line);
+            border-radius: 7px;
+            background: linear-gradient(130deg, rgba(255, 138, 54, 0.045), rgba(140, 130, 219, 0.035));
+        }
+
+        .stat-card {
+            min-height: 190px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 25px 30px;
+            border-right: 1px solid var(--line);
+        }
+
+        .stat-card:last-child {
+            border-right: 0;
+        }
+
+        .stat-number {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--orange);
+            font-family: var(--display);
+            font-size: clamp(3rem, 5vw, 4.35rem);
+            font-weight: 600;
+            letter-spacing: -0.05em;
+            line-height: 1;
+        }
+
+        .stat-label {
+            display: block;
+            color: var(--ink);
+            font-size: 1.02rem;
+            font-weight: 600;
+        }
+
+        .stat-note {
+            display: block;
+            margin-top: 5px;
+            color: var(--subtle);
+            font-size: 0.75rem;
+        }
+
+        .disclaimer {
+            margin: 12px 0 0;
+            color: var(--subtle);
+            font-size: 0.76rem;
+        }
+
+        .journey-section {
+            background: linear-gradient(180deg, transparent, rgba(255, 138, 54, 0.035), transparent);
+        }
+
+        .journey-list {
+            position: relative;
+            display: grid;
+            gap: 0;
+            max-width: 880px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .journey-list::before {
+            position: absolute;
+            top: 16px;
+            bottom: 18px;
+            left: 91px;
+            width: 1px;
+            background: linear-gradient(var(--orange), rgba(255, 138, 54, 0.12));
+            content: "";
+        }
+
+        .journey-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: 72px 1fr;
+            gap: 42px;
+            padding: 0 0 28px;
+        }
+
+        .journey-item::before {
+            position: absolute;
+            top: 7px;
+            left: 86px;
+            width: 11px;
+            height: 11px;
+            border: 2px solid var(--bg);
+            border-radius: 50%;
+            background: var(--orange);
+            box-shadow: 0 0 0 1px var(--orange);
+            content: "";
+        }
+
+        .journey-date {
+            color: var(--orange-light);
+            font-size: 0.83rem;
+            font-weight: 700;
+            line-height: 1.5;
+            text-align: right;
+        }
+
+        .journey-copy {
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .journey-item:last-child .journey-copy {
+            border-bottom: 0;
+        }
+
+        .journey-item::before {
+            transition: box-shadow 200ms ease, transform 200ms ease;
+        }
+
+        .journey-item:hover::before {
+            transform: scale(1.15);
+            box-shadow: 0 0 0 4px rgba(255, 138, 54, 0.1);
+        }
+
+        .journey-copy h3 {
+            margin-bottom: 5px;
+            font-family: var(--display);
+            font-size: 1.08rem;
+            font-weight: 600;
+        }
+
+        .journey-copy p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.91rem;
+        }
+
+        .workflow {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            counter-reset: flow;
+        }
+
+        .workflow-card {
+            position: relative;
+            min-height: 204px;
+            padding: 24px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: var(--surface);
+            transition: border-color 180ms ease, transform 180ms ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 138, 54, 0.3);
+            transition: border-color 180ms ease, transform 180ms ease, background-color 180ms ease;
+        }
+
+        .workflow-card {
+            counter-increment: flow;
+        }
+
+        .workflow-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 138, 54, 0.35);
+            background: #14151a;
+        }
+
+        .workflow-card::after {
+            position: absolute;
+            top: 8px;
+            right: 17px;
+            color: rgba(255, 138, 54, 0.18);
+            content: "0" counter(flow);
+            font-family: var(--display);
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.08em;
+        }
+
+        .workflow-card h3,
+        .feature-card h3,
+        .impact-card h3,
+        .involved-card h3,
+        .resource-card h3 {
+            margin-bottom: 8px;
+            font-family: var(--display);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .workflow-card p,
+        .feature-card p,
+        .impact-card p,
+        .involved-card p,
+        .resource-card p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .workflow-symbol {
+            width: 43px;
+            height: 43px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 23px;
+            border: 1px solid rgba(255, 138, 54, 0.26);
+            border-radius: 50%;
+            color: var(--orange-light);
+            font-size: 1.15rem;
+        }
+
+        .impact-grid,
+        .feature-grid,
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .involved-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .impact-card,
+        .feature-card,
+        .involved-card,
+        .resource-card {
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: var(--surface);
+            transition: border-color 180ms ease, transform 180ms ease;
+        }
+
+        .impact-card:hover,
+        .feature-card:hover,
+        .involved-card:hover,
+        .resource-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 138, 54, 0.32);
+        }
+
+        .impact-mark {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--orange);
+            font-family: var(--display);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .calculator {
+            margin-top: 22px;
+            padding: 25px;
+            border: 1px solid rgba(255, 138, 54, 0.23);
+            border-radius: 6px;
+            background: linear-gradient(110deg, rgba(255, 138, 54, 0.07), rgba(140, 130, 219, 0.04));
+        }
+
+        .calculator h3 {
+            margin-bottom: 6px;
+            font-family: var(--display);
+            font-size: 1.06rem;
+        }
+
+        .calculator > p {
+            margin-bottom: 18px;
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        .calculator-controls {
+            display: flex;
+            align-items: end;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .calculator-field {
+            display: grid;
+            gap: 5px;
+        }
+
+        .calculator-field label {
+            color: var(--muted);
+            font-size: 0.77rem;
+        }
+
+        .calculator-field input {
+            width: 135px;
+            min-height: 42px;
+            padding: 8px 11px;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            background: var(--bg);
+            color: var(--ink);
+        }
+
+        .calculator-result {
+            margin: 0 0 3px;
+            color: var(--orange-light);
+            font-family: var(--display);
+            font-size: 1.35rem;
+            font-weight: 600;
+        }
+
+        .features-section {
+            background: linear-gradient(180deg, transparent, rgba(140, 130, 219, 0.04), transparent);
+        }
+
+        .feature-card {
+            min-height: 195px;
+        }
+
+        .feature-status {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 4px 8px;
+            border: 1px solid rgba(255, 138, 54, 0.28);
+            border-radius: 3px;
+            color: var(--orange-light);
+            font-size: 0.67rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .paper-card {
+            margin-bottom: 18px;
+            padding: clamp(22px, 4vw, 34px);
+            border: 1px solid rgba(255, 138, 54, 0.3);
+            border-left: 3px solid var(--orange);
+            border-radius: 5px;
+            background: linear-gradient(110deg, rgba(255, 138, 54, 0.075), rgba(255, 255, 255, 0.025));
+        }
+
+        .paper-card h3 {
+            margin: 0 0 12px;
+            color: var(--orange-light);
+            font-family: var(--display);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .paper-citation {
+            max-width: 930px;
+            margin: 0 0 13px;
+            color: var(--ink);
+            font-size: 0.94rem;
+            line-height: 1.8;
+        }
+
+        .paper-link {
+            color: var(--orange-light);
+            font-size: 0.86rem;
+            font-weight: 600;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.9fr 0.9fr;
+            gap: 15px;
+        }
+
+        .gallery-item {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: var(--surface);
+            color: var(--ink);
+            text-align: left;
+            cursor: pointer;
+            transition: border-color 180ms ease, transform 180ms ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 138, 54, 0.48);
+        }
+
+        .gallery-item:focus-visible {
+            outline-offset: 3px;
+        }
+
+        .gallery-photo {
+            width: 100%;
+            display: block;
+            aspect-ratio: 1.28 / 1;
+            background: var(--surface-raised);
+            object-fit: cover;
+            transition: transform 220ms ease;
+        }
+
+        .gallery-photo[data-fit="contain"] {
+            padding: 8px;
+            object-fit: contain;
+        }
+
+        .gallery-item:hover .gallery-photo {
+            transform: scale(1.025);
+        }
+
+        .gallery-caption {
+            display: block;
+            padding: 15px 17px 17px;
+        }
+
+        .gallery-caption strong,
+        .gallery-caption span {
+            display: block;
+        }
+
+        .gallery-caption strong {
+            margin-bottom: 3px;
+            font-family: var(--display);
+            font-size: 0.91rem;
+        }
+
+        .gallery-caption span {
+            color: var(--muted);
+            font-size: 0.77rem;
+        }
+
+        .gallery-dialog {
+            width: min(760px, calc(100% - 32px));
+            max-height: min(90vh, 900px);
+            padding: 18px;
+            overflow: auto;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 8px;
+            background: #121319;
+            color: var(--ink);
+        }
+
+        .gallery-dialog::backdrop {
+            background: rgba(0, 0, 0, 0.82);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+        }
+
+        .dialog-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .dialog-top h2 {
+            margin: 0;
+            font-family: var(--display);
+            font-size: 1.15rem;
+        }
+
+        .dialog-close {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            background: transparent;
+            color: var(--ink);
+            font-size: 1.25rem;
+            cursor: pointer;
+        }
+
+        .dialog-art {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 4px;
+            background: #101117;
+        }
+
+        .dialog-art img {
+            width: 100%;
+            max-height: 72vh;
+            display: block;
+            object-fit: contain;
+        }
+
+        .dialog-caption {
+            margin: 13px 0 0;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .gallery-note {
+            margin: 13px 0 0;
+            color: var(--subtle);
+            font-size: 0.76rem;
+        }
+
+        .involved-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 220px;
+        }
+
+        .involved-card .button {
+            align-self: flex-start;
+            margin-top: auto;
+            padding-top: 9px;
+            padding-bottom: 9px;
+        }
+
+        .team-card {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            align-items: center;
+            gap: 30px;
+            max-width: 780px;
+            padding: 27px;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: var(--surface);
+        }
+
+        .team-photo {
+            width: 170px;
+            height: 170px;
+            border: 1px solid rgba(255, 138, 54, 0.28);
+            border-radius: 5px;
+            object-fit: cover;
+            background: var(--surface-raised);
+        }
+
+        .team-card h3 {
+            margin-bottom: 3px;
+            font-family: var(--display);
+            font-size: 1.45rem;
+            font-weight: 600;
+        }
+
+        .team-role {
+            margin-bottom: 12px;
+            color: var(--orange-light);
+            font-size: 0.86rem;
+            font-weight: 600;
+        }
+
+        .team-description {
+            max-width: 530px;
+            margin-bottom: 14px;
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .text-link {
+            color: var(--orange-light);
+            font-size: 0.87rem;
+            font-weight: 600;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+        }
+
+        .contact-band {
+            padding: 67px 0;
+            border-top: 1px solid var(--line);
+            background:
+                radial-gradient(ellipse at 80% 50%, rgba(122, 70, 49, 0.16), transparent 40%),
+                #101116;
+        }
+
+        .contact-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .contact-inner h2 {
+            margin-bottom: 8px;
+            font-family: var(--display);
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 500;
+            letter-spacing: -0.05em;
+        }
+
+        .contact-inner p:not(.eyebrow) {
+            max-width: 560px;
+            margin-bottom: 0;
+            color: var(--muted);
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .contact-actions .button-secondary {
+            border-color: var(--line);
+            background: rgba(255, 255, 255, 0.035);
+            color: var(--ink);
+        }
+
+        .contact-actions .button-secondary:hover {
+            border-color: rgba(255, 138, 54, 0.6);
+            background: rgba(255, 138, 54, 0.08);
+            color: var(--orange-light);
+        }
+
+        .contact-form {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            width: min(var(--content-width), calc(100% - 48px));
+            margin: 40px auto 0;
+        }
+
+        .form-field {
+            display: grid;
+            gap: 6px;
+        }
+
+        .form-field.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-field label {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            min-height: 48px;
+            padding: 11px 13px;
+            border: 1px solid var(--line);
+            border-radius: 5px;
+            background: var(--bg);
+            color: var(--ink);
+            font-size: 16px; /* 16px stops iOS Safari zooming on focus */
+        }
+
+        .form-field textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-field input:focus,
+        .form-field textarea:focus {
+            border-color: var(--orange);
+        }
+
+        .form-hp {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        .form-actions {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .form-actions .button {
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .form-actions .button[disabled] {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        .form-status {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .form-status.is-error {
+            color: #ff8f8f;
+        }
+
+        .form-status.is-success {
+            color: #8fe0a8;
+        }
+
+        .site-footer {
+            padding: 22px 0;
+            border-top: 1px solid var(--line);
+            color: var(--subtle);
+            font-size: 0.79rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .footer-inner p {
+            margin: 0;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+        }
+
+        .footer-links a {
+            white-space: nowrap;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange-light);
+        }
+
+        @media (max-width: 960px) {
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links .nav-contact {
+                display: inline-flex;
+            }
+
+            .nav-links a {
+                font-size: 0.79rem;
+            }
+
+            .nav > .nav-contact {
+                display: none;
+            }
+
+            .hero-grid {
+                grid-template-columns: minmax(0, 1fr) minmax(270px, 0.85fr);
+                gap: 25px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-item:first-child {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .container {
+                width: min(var(--content-width), calc(100% - 36px));
+            }
+
+            .nav {
+                min-height: 68px;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .nav > .nav-contact {
+                display: none;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: calc(100% + 1px);
+                right: 0;
+                left: 0;
+                display: none;
+                align-items: stretch;
+                gap: 0;
+                padding: 8px 18px 17px;
+                border-bottom: 1px solid var(--line);
+                background: rgba(9, 10, 13, 0.98);
+            }
+
+            .nav-links.is-open {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 10px 0;
+                font-size: 0.9rem;
+            }
+
+            .nav-links .nav-contact {
+                display: inline-flex;
+                margin-top: 9px;
+                padding: 11px 18px;
+            }
+
+            .hero {
+                min-height: 0;
+                padding: 67px 0 53px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .about-overview {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .hero h1 {
+                max-width: 590px;
+                font-size: clamp(3rem, 12.5vw, 5rem);
+            }
+
+            .section {
+                padding: 72px 0;
+            }
+
+            .stats-grid,
+            .workflow,
+            .impact-grid,
+            .feature-grid,
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .involved-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-card {
+                min-height: 0;
+                padding: 20px 22px;
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .stat-card:last-child {
+                border-bottom: 0;
+            }
+
+            .stat-number {
+                font-size: 3.4rem;
+            }
+
+            .journey-list::before {
+                left: 4px;
+            }
+
+            .journey-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+                padding-left: 25px;
+                padding-bottom: 23px;
+            }
+
+            .journey-item::before {
+                left: 0;
+            }
+
+            .journey-date {
+                text-align: left;
+            }
+
+            .workflow-card,
+            .feature-card,
+            .involved-card {
+                min-height: 0;
+            }
+
+            .workflow-card {
+                padding-right: 65px;
+            }
+
+            .workflow-card::after {
+                top: 16px;
+                right: 17px;
+            }
+
+            .workflow-symbol {
+                margin-bottom: 15px;
+            }
+
+            .calculator {
+                padding: 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item:first-child {
+                grid-column: auto;
+            }
+
+            .gallery-photo {
+                aspect-ratio: 1.35 / 1;
+            }
+
+            .team-card {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 22px;
+            }
+
+            .team-photo {
+                width: 135px;
+                height: 135px;
+            }
+
+            .contact-inner,
+            .footer-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .contact-band {
+                padding: 55px 0;
+            }
+
+            .contact-form {
+                grid-template-columns: 1fr;
+                width: calc(100% - 36px);
+            }
+        }
+
+        @media (max-width: 370px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-actions .button {
+                width: 100%;
+            }
+
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .js-enabled .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a class="brand" href="#home" aria-label="I-SRAVIA home">
+                <img src="assets/isravia-logo.webp" alt="I-SRAVIA" width="62" height="66">
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-links" aria-label="Open navigation menu">☰</button>
+            <ul class="nav-links" id="primary-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#approach">How it works</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a class="button nav-contact" href="#get-involved">Get involved</a></li>
+            </ul>
+            <a class="button nav-contact" href="#get-involved">Get involved</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container" id="home">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Indian Sign Language · Accessibility · Technology</p>
+                    <h1>Break the wall of <em>silence.</em></h1>
+                    <p class="hero-description">
+                        I-SRAVIA — Indian Sign-Language Responsive &amp; Voice Intelligent Assistant — is an accessibility technology company working to make communication more inclusive.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button" href="https://www.youtube.com/watch?v=IJzqUcsietY" target="_blank" rel="noopener noreferrer">Watch project demo <span aria-hidden="true">↗</span></a>
+                        <a class="button" href="#journey">Explore our journey <span aria-hidden="true">↓</span></a>
+                    </div>
+                    <p class="project-status"><span class="status-dot" aria-hidden="true"></span>Accessibility technology company · In development</p>
+                </div>
+                <figure class="hero-photo">
+                    <img src="assets/school-visit-classroom.webp" width="897" height="704" alt="Students at Shree Harsha School for the Deaf in Jatni during the visit that inspired I-SRAVIA" fetchpriority="high">
+                    <figcaption><strong>Where the idea began</strong><span>Shree Harsha School · Jatni</span></figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section container" id="about">
+            <div class="about-overview">
+                <div class="about-copy">
+                    <p class="eyebrow">About I-SRAVIA</p>
+                    <h2>Technology should make room for more ways to communicate.</h2>
+                    <p>I-SRAVIA stands for Indian Sign-Language Responsive &amp; Voice Intelligent Assistant. We are an accessibility technology company exploring sign-language recognition, speech technology and tools that could make everyday communication easier.</p>
+                    <p>Sign languages have their own grammar and culture. Technology can support communication, but meaningful progress depends on listening to signers, educators and the communities the work is intended to serve.</p>
+                </div>
+                <div class="about-principles" aria-label="Project principles">
+                    <div class="about-principle"><strong>People first</strong><span>Build around lived experience and accessibility needs.</span></div>
+                    <div class="about-principle"><strong>Indian Sign Language</strong><span>Focus on the language and context the project serves.</span></div>
+                    <div class="about-principle"><strong>Research with care</strong><span>Be transparent about what is exploratory and what is validated.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container" id="impact" aria-labelledby="reach-title">
+            <div class="section-heading">
+                <p class="eyebrow">Why this matters</p>
+                <h2 id="reach-title">A mission grounded in real-world impact.</h2>
+                <p>From the scale of communication access to the first funding raised, these figures help tell the story behind I-SRAVIA.</p>
+            </div>
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <span class="stat-number">63M</span>
+                    <span class="stat-label">Deaf individuals in India</span>
+                    </article>
+                <article class="stat-card">
+                    <span class="stat-number">400M</span>
+                    <span class="stat-label">People globally affected</span>
+                    
+                </article>
+                <article class="stat-card">
+                    <span class="stat-number">₹44k</span>
+                    <span class="stat-label">Raised for early development</span>
+                    <span class="stat-note">Initial funding from DST and KVS</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container" id="approach">
+            <div class="section-heading">
+                <p class="eyebrow">How it works</p>
+                <h2 id="approach-title">A communication pathway, designed with people in mind.</h2>
+                <p>The project explores a three-part workflow. This is a high-level concept—not a claim that the full product is currently available.</p>
+            </div>
+            <div class="workflow">
+                <article class="workflow-card">
+                    <span class="workflow-symbol" aria-hidden="true">◎</span>
+                    <h3>Input</h3>
+                    <p>A camera could capture sign-language gestures, or a microphone could record speech.</p>
+                </article>
+                <article class="workflow-card">
+                    <span class="workflow-symbol" aria-hidden="true">⌘</span>
+                    <h3>Recognition research</h3>
+                    <p>Computer vision and language processing are explored to interpret visual or spoken input.</p>
+                </article>
+                <article class="workflow-card">
+                    <span class="workflow-symbol" aria-hidden="true">↗</span>
+                    <h3>Accessible output</h3>
+                    <p>Possible outputs include text, synthesized speech or a transcript, depending on the experience being built.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section features-section" id="recognition">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Impact &amp; recognition</p>
+                    <h2>Progress is a community effort.</h2>
+                    <p>Recognition, education and research are key parts of our work.</p>
+                </div>
+                <div class="impact-grid">
+                    <article class="impact-card">
+                        <span class="impact-mark">Recognition</span>
+                        <h3>DST-INSPIRE MANAK National Award</h3>
+                        <p>National recognition in September 2024 marked a major milestone in the project's development.</p>
+                    </article>
+                    <article class="impact-card">
+                        <span class="impact-mark">Development</span>
+                        <h3>₹44,000 in initial funding</h3>
+                        <p>Funding from the Department of Science and Technology and Kendriya Vidyalaya Sangathan supported prototype development.</p>
+                    </article>
+                    <article class="impact-card">
+                        <span class="impact-mark">Community</span>
+                        <h3>Rooted in a school visit</h3>
+                        <p>An early visit to Shree Harsha School for the Deaf in Jatni sparked the idea behind I-SRAVIA.</p>
+                    </article>
+                </div>
+
+                <div class="calculator">
+                    <h3>Communication-hours estimator</h3>
+                    <p>A simple illustration of how enabled communication time could add up. This is a hypothetical estimate, not measured project impact.</p>
+                    <div class="calculator-controls">
+                        <div class="calculator-field">
+                            <label for="users">People using the tool</label>
+                            <input id="users" type="number" min="0" max="1000000" step="1" value="100" inputmode="numeric">
+                        </div>
+                        <div class="calculator-field">
+                            <label for="hours-per-person">Hours per person, daily</label>
+                            <input id="hours-per-person" type="number" min="0" max="24" step="0.5" value="8" inputmode="decimal">
+                        </div>
+                        <p class="calculator-result" id="impact-result" aria-live="polite">800 hours / day</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section journey-section" id="journey">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Our journey</p>
+                    <h2>From one school visit to a growing research venture.</h2>
+                    <p>Every milestone has moved I-SRAVIA closer to a more accessible, software-driven approach to communication.</p>
+                </div>
+                <ol class="journey-list">
+                    <li class="journey-item">
+                        <time class="journey-date" datetime="2022-04-22">22 April 2022</time>
+                        <div class="journey-copy"><h3>Where it began</h3><p>A visit to Shree Harsha School for the Deaf, Jatni sparked the idea behind I-SRAVIA and its goal of making communication more accessible.</p></div>
+                    </li>
+                    <li class="journey-item">
+                        <time class="journey-date" datetime="2022-11">November 2022</time>
+                        <div class="journey-copy"><h3>The first prototype</h3><p>Developed and submitted the first I-SRAVIA prototype to the DST-INSPIRE MANAK programme.</p></div>
+                    </li>
+                    <li class="journey-item">
+                        <span class="journey-date">2023–2024</span>
+                        <div class="journey-copy"><h3>A major transformation</h3><p>Evolved I-SRAVIA from an initial hardware-based concept into a software-driven solution, expanding its potential for accessibility and real-world use.</p></div>
+                    </li>
+                    <li class="journey-item">
+                        <time class="journey-date" datetime="2024-09-19">19 September 2024</time>
+                        <div class="journey-copy"><h3>National recognition</h3><p>Received recognition through the DST-INSPIRE MANAK National Award, marking a major milestone in the project's journey.</p></div>
+                    </li>
+                    <li class="journey-item">
+                        <time class="journey-date" datetime="2024-12-09">9 December 2024</time>
+                        <div class="journey-copy"><h3>Funding the next stage</h3><p>Secured product funding through the Kendriya Vidyalaya Sangathan (KVS) fund to support further prototype development.</p></div>
+                    </li>
+                    <li class="journey-item">
+                        <time class="journey-date" datetime="2025-02-06">6 February 2025</time>
+                        <div class="journey-copy"><h3>Taking the idea further</h3><p>Pitched I-SRAVIA to reviewers at STPI, continuing the work toward developing and validating the project.</p></div>
+                    </li>
+                    <li class="journey-item">
+                        <span class="journey-date">2025</span>
+                        <div class="journey-copy"><h3>₹44,000 raised for development</h3><p>Secured a total of ₹44,000 in initial funding from the Department of Science and Technology (DST) and KVS to support the project's development.</p></div>
+                    </li>
+                    <li class="journey-item">
+                        <time class="journey-date" datetime="2025-11">November 2025</time>
+                        <div class="journey-copy"><h3>Research publication and presentation</h3><p>Published peer-reviewed research and presented the work at the 5th Indian International Conference on Industrial Engineering and Operations Management in Vellore.</p></div>
+                    </li>
+                    <li class="journey-item">
+                        <span class="journey-date">2026</span>
+                        <div class="journey-copy"><h3>Selected for Sakura Science</h3><p>Selected for the Sakura Science Exchange Programme, with an opportunity to participate in an international science exchange in Japan.</p></div>
+                    </li>
+                    <li class="journey-item">
+                        <span class="journey-date">Today</span>
+                        <div class="journey-copy"><h3>Still evolving</h3><p>I-SRAVIA has grown from a school visit and an early idea into a funded, peer-reviewed prototype with a developing business model. Community engagement and further validation are underway with ISL signers and reviewers.</p></div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section container" id="features">
+            <div class="section-heading">
+                <p class="eyebrow">Product direction</p>
+                <h2>Designed around useful possibilities.</h2>
+                <p>The areas we are building towards and exploring.</p>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card"><span class="feature-status">In development</span><h3>Real-time sign recognition</h3><p>Gesture-to-text recognition of Indian Sign Language is a core goal of the project.</p></article>
+                <article class="feature-card"><span class="feature-status">In exploration</span><h3>Speech and text</h3><p>Exploring speech recognition to support communication across modalities.</p></article>
+                <article class="feature-card"><span class="feature-status">Design goal</span><h3>Mobile accessibility</h3><p>Aiming for experiences that can work on commonly available phones and tablets.</p></article>
+                <article class="feature-card"><span class="feature-status">Design goal</span><h3>Privacy-aware design</h3><p>Considering data handling and local processing as part of responsible development.</p></article>
+                <article class="feature-card"><span class="feature-status">Research</span><h3>Models and datasets</h3><p>Exploring how research and community contributions can help improve language tools.</p></article>
+                <article class="feature-card"><span class="feature-status">Community</span><h3>Learning tools</h3><p>Considering resources that could support sign-language learning and teaching.</p></article>
+            </div>
+        </section>
+
+        <section class="section container" id="gallery">
+            <div class="section-heading">
+                <p class="eyebrow">Project gallery</p>
+                <h2>Moments from the I-SRAVIA journey.</h2>
+                <p>From the school visit that sparked the idea to prototype development, hand-sign exchanges and national recognition.</p>
+            </div>
+            <div class="gallery-grid">
+                <button class="gallery-item" type="button" data-title="Where the idea began" data-caption="Students at Shree Harsha School for the Deaf in Jatni during the visit that inspired the I-SRAVIA idea.">
+                    <img class="gallery-photo" src="assets/school-visit-classroom.webp" width="897" height="704" alt="Students gathered at Shree Harsha School for the Deaf in Jatni" loading="lazy" decoding="async">
+                    <span class="gallery-caption"><strong>Where the idea began</strong><span>Shree Harsha School · Jatni · 2022</span></span>
+                </button>
+                <button class="gallery-item" type="button" data-title="Hands in conversation" data-caption="Students share gestures during a school visit. The photo is a moment of exchange, not an instructional guide to specific Indian Sign Language signs.">
+                    <img class="gallery-photo" src="assets/school-visit-signs.webp" width="451" height="342" alt="Students at a school visit sharing hand gestures with one another" loading="lazy" decoding="async">
+                    <span class="gallery-caption"><strong>Hands in conversation</strong><span>Community visit · Shared gestures</span></span>
+                </button>
+                <button class="gallery-item" type="button" data-title="Sharing the prototype" data-caption="I-SRAVIA being presented during an early prototype and project review.">
+                    <img class="gallery-photo" src="assets/prototype-presentation.webp" width="887" height="338" alt="I-SRAVIA prototype presentation during a project review" loading="lazy" decoding="async">
+                    <span class="gallery-caption"><strong>Sharing the prototype</strong><span>Project presentation</span></span>
+                </button>
+                <button class="gallery-item" type="button" data-title="The early I-SRAVIA interface" data-caption="An early project interface showing the sign-to-text and speech-to-text interaction concept.">
+                    <img class="gallery-photo" src="assets/isravia-prototype-interface.webp" width="908" height="367" alt="Early I-SRAVIA prototype interface with camera and text areas" loading="lazy" decoding="async" data-fit="contain">
+                    <span class="gallery-caption"><strong>The early interface</strong><span>Prototype · Sign and speech tools</span></span>
+                </button>
+                <button class="gallery-item" type="button" data-title="National recognition" data-caption="I-SRAVIA receives recognition through the DST-INSPIRE MANAK National Award.">
+                    <img class="gallery-photo" src="assets/national-award.webp" width="282" height="292" alt="I-SRAVIA national award presentation" loading="lazy" decoding="async" data-fit="contain">
+                    <span class="gallery-caption"><strong>National recognition</strong><span>DST-INSPIRE MANAK National Award</span></span>
+                </button>
+            </div>
+        </section>
+
+        <dialog class="gallery-dialog" id="gallery-dialog" aria-labelledby="dialog-title">
+            <div class="dialog-top">
+                <h2 id="dialog-title">I-SRAVIA gallery</h2>
+                <button class="dialog-close" type="button" aria-label="Close gallery image">×</button>
+            </div>
+            <div class="dialog-art" id="dialog-art"></div>
+            <p class="dialog-caption" id="dialog-caption"></p>
+        </dialog>
+
+        <section class="section features-section" id="get-involved">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Get involved</p>
+                    <h2>Help move accessible communication forward.</h2>
+                    <p>We welcome conversations with educators, researchers, volunteers and organizations interested in this work.</p>
+                </div>
+                <div class="involved-grid">
+                    <article class="involved-card">
+                        <span class="impact-mark">Pilot programme</span>
+                        <h3>Share your perspective</h3>
+                        <p>Interested in learning about testing or providing feedback as the project develops?</p>
+                        <a class="button button-secondary" href="mailto:project.isravia@gmail.com?subject=I-SRAVIA%20pilot%20programme">Ask about the pilot</a>
+                    </article>
+                    <article class="involved-card">
+                        <span class="impact-mark">Volunteer</span>
+                        <h3>Contribute your skills</h3>
+                        <p>Help with research, testing, language resources or community engagement.</p>
+                        <a class="button button-secondary" href="mailto:project.isravia@gmail.com?subject=I-SRAVIA%20volunteering">Explore volunteering</a>
+                    </article>
+                    <article class="involved-card">
+                        <span class="impact-mark">Partnership</span>
+                        <h3>Work together</h3>
+                        <p>Schools, NGOs, researchers and organizations can get in touch to discuss collaboration.</p>
+                        <a class="button" href="mailto:project.isravia@gmail.com?subject=I-SRAVIA%20partnership">Start a conversation</a>
+                    </article>
+                    <article class="involved-card">
+                        <span class="impact-mark">Support</span>
+                        <h3>Support the mission</h3>
+                        <p>Interested in supporting research and development? Contact the team to discuss appropriate ways to help.</p>
+                        <a class="button button-secondary" href="mailto:project.isravia@gmail.com?subject=Supporting%20I-SRAVIA">Discuss support</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container" id="resources">
+            <div class="section-heading">
+                <p class="eyebrow">Research &amp; resources</p>
+                <h2>Published research, from the project.</h2>
+                <p>I-SRAVIA's research paper documents the project's prototyping, testing and validation work.</p>
+            </div>
+            <article class="paper-card">
+                <h3>Peer-reviewed conference paper</h3>
+                <p class="paper-citation"><cite>Mishra, S., &amp; Karjee, S. (2025). I-SRAVIA—Breaking the Wall of Silence: Prototyping, Testing and Validating. Proceedings of the 5th Indian International Conference on Industrial Engineering and Operations Management.</cite></p>
+                <a class="paper-link" href="https://doi.org/10.46254/IN05.20250095" target="_blank" rel="noopener noreferrer">Read the paper · DOI: 10.46254/IN05.20250095 <span aria-hidden="true">↗</span></a>
+            </article>
+            <div class="resource-grid">
+                <article class="resource-card">
+                    <span class="impact-mark">Open data</span>
+                    <h3>Datasets</h3>
+                    <p>Contact the team to learn about community-contributed data and research access.</p>
+                    <p style="margin-top: 15px;"><a class="text-link" href="mailto:project.isravia@gmail.com?subject=I-SRAVIA%20datasets">Ask about data ↗</a></p>
+                </article>
+                <article class="resource-card">
+                    <span class="impact-mark">Learning</span>
+                    <h3>Tutorials &amp; guides</h3>
+                    <p>Get in touch about how to follow the project or contribute as it develops.</p>
+                    <p style="margin-top: 15px;"><a class="text-link" href="mailto:project.isravia@gmail.com?subject=I-SRAVIA%20learning%20resources">Request resources ↗</a></p>
+                </article>
+                <article class="resource-card">
+                    <span class="impact-mark">Contact</span>
+                    <h3>Research enquiries</h3>
+                    <p>For questions about the publication, collaboration or research outcomes, contact the I-SRAVIA team.</p>
+                    <p style="margin-top: 15px;"><a class="text-link" href="mailto:project.isravia@gmail.com?subject=I-SRAVIA%20research%20enquiry">Email the team ↗</a></p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section container" id="team">
+            <div class="section-heading">
+                <p class="eyebrow">The people behind the project</p>
+                <h2>Built with a purpose.</h2>
+            </div>
+            <article class="team-card">
+                <img class="team-photo" src="assets/profile.webp" width="170" height="170" loading="lazy" decoding="async" alt="Shraavya Mishra">
+                <div>
+                    <h3>Shraavya Mishra</h3>
+                    <p class="team-role">Founder &amp; Lead Developer</p>
+                    <p class="team-description">Shraavya is an innovator from India interested in building technology that can contribute to social impact.</p>
+                    <a class="text-link" href="https://www.linkedin.com/in/shraavya-mishra-197114218/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
+                </div>
+            </article>
+        </section>
+
+        <section class="contact-band" id="contact">
+            <div class="contact-inner container">
+                <div>
+                    <p class="eyebrow">Contact I-SRAVIA</p>
+                    <h2>Let's make communication more accessible.</h2>
+                    <p>Questions, press enquiries, partnerships or technical conversations—reach the company team by email.</p>
+                </div>
+                <div class="contact-actions">
+                    <a class="button" href="mailto:project.isravia@gmail.com">Email the team <span aria-hidden="true">↗</span></a>
+                    <a class="button button-secondary" href="https://in.linkedin.com/company/i-sravia" target="_blank" rel="noopener noreferrer">Follow us on LinkedIn <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contact-form" novalidate>
+                <div class="form-field">
+                    <label for="cf-name">Your name</label>
+                    <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="100">
+                </div>
+                <div class="form-field">
+                    <label for="cf-email">Your email</label>
+                    <input id="cf-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="150">
+                </div>
+                <div class="form-field full">
+                    <label for="cf-subject">Subject</label>
+                    <input id="cf-subject" name="subject" type="text" maxlength="150" value="Message from the I-SRAVIA website">
+                </div>
+                <div class="form-field full">
+                    <label for="cf-message">Message</label>
+                    <textarea id="cf-message" name="message" required maxlength="3000"></textarea>
+                </div>
+                <div class="form-hp" aria-hidden="true">
+                    <label for="cf-website">Leave this field empty</label>
+                    <input id="cf-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+                </div>
+                <div class="form-actions">
+                    <button class="button" type="submit" id="cf-submit">Send message</button>
+                    <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner container">
+            <p>© <span id="current-year">2026</span> I-SRAVIA. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacypolicy.html">Privacy policy</a>
+                <a href="termsandconditions.html">Terms &amp; Conditions</a>
+                <a href="#get-involved">Get involved</a>
+                <a href="https://in.linkedin.com/company/i-sravia" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:project.isravia@gmail.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navigation = document.querySelector("#primary-links");
+
+        menuToggle.addEventListener("click", () => {
+            const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+            menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+            menuToggle.setAttribute("aria-label", isExpanded ? "Open navigation menu" : "Close navigation menu");
+            navigation.classList.toggle("is-open", !isExpanded);
+        });
+
+        navigation.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation menu");
+                navigation.classList.remove("is-open");
+            });
+        });
+
+        const usersInput = document.querySelector("#users");
+        const hoursInput = document.querySelector("#hours-per-person");
+        const impactResult = document.querySelector("#impact-result");
+
+        function updateImpactEstimate() {
+            const users = Math.max(0, Number(usersInput.value) || 0);
+            const hours = Math.min(24, Math.max(0, Number(hoursInput.value) || 0));
+            impactResult.textContent = `${(users * hours).toLocaleString()} hours / day`;
+        }
+
+        usersInput.addEventListener("input", updateImpactEstimate);
+        hoursInput.addEventListener("input", updateImpactEstimate);
+
+        const galleryDialog = document.querySelector("#gallery-dialog");
+        const dialogTitle = document.querySelector("#dialog-title");
+        const dialogMedia = document.querySelector("#dialog-art");
+        const dialogCaption = document.querySelector("#dialog-caption");
+
+        document.querySelectorAll(".gallery-item").forEach((item) => {
+            item.addEventListener("click", () => {
+                const photo = item.querySelector(".gallery-photo");
+                // Older Safari (< 15.4) has no <dialog>: open the image directly instead.
+                if (typeof galleryDialog.showModal !== "function") {
+                    window.open(photo.currentSrc || photo.src, "_blank", "noopener");
+                    return;
+                }
+                dialogTitle.textContent = item.dataset.title;
+                dialogCaption.textContent = item.dataset.caption;
+                dialogMedia.replaceChildren(photo.cloneNode());
+                galleryDialog.showModal();
+            });
+        });
+
+        /* ---------- Contact form ----------
+           Paste your Formspree form URL below (https://formspree.io/f/xxxxxxxx).
+           While it is empty, the form falls back to opening the visitor's email app. */
+        const FORM_ENDPOINT = "";
+        const FORM_EMAIL = "project.isravia@gmail.com";
+
+        const contactForm = document.querySelector("#contact-form");
+        const formStatus = document.querySelector("#cf-status");
+        const formSubmit = document.querySelector("#cf-submit");
+
+        function setFormStatus(message, kind) {
+            formStatus.textContent = message;
+            formStatus.className = "form-status" + (kind ? " is-" + kind : "");
+        }
+
+        contactForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const data = Object.fromEntries(new FormData(contactForm).entries());
+
+            if (data._gotcha) return; // bot filled the hidden field
+            if (!data.name.trim() || !data.message.trim()) {
+                setFormStatus("Please enter your name and a message.", "error");
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim())) {
+                setFormStatus("Please enter a valid email address.", "error");
+                return;
+            }
+
+            if (!FORM_ENDPOINT) {
+                const body = `${data.message}\n\n— ${data.name} (${data.email})`;
+                window.location.href = `mailto:${FORM_EMAIL}?subject=${encodeURIComponent(data.subject || "Message from the I-SRAVIA website")}&body=${encodeURIComponent(body)}`;
+                setFormStatus("Opening your email app… if nothing opens, write to " + FORM_EMAIL, "");
+                return;
+            }
+
+            formSubmit.disabled = true;
+            setFormStatus("Sending…", "");
+            try {
+                const response = await fetch(FORM_ENDPOINT, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify({ name: data.name, email: data.email, subject: data.subject, message: data.message, _replyto: data.email })
+                });
+                if (!response.ok) throw new Error("HTTP " + response.status);
+                contactForm.reset();
+                setFormStatus("Thank you — your message has been sent. We'll reply by email.", "success");
+                if (typeof gtag === "function") gtag("event", "generate_lead", { method: "contact_form" });
+            } catch (error) {
+                setFormStatus("Sorry, that didn't send. Please email " + FORM_EMAIL + " directly.", "error");
+            } finally {
+                formSubmit.disabled = false;
+            }
+        });
+
+        document.querySelector(".dialog-close").addEventListener("click", () => galleryDialog.close());
+        galleryDialog.addEventListener("click", (event) => {
+            if (event.target === galleryDialog) {
+                galleryDialog.close();
+            }
+        });
+
+        document.querySelector("#current-year").textContent = new Date().getFullYear();
+
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (!prefersReducedMotion) {
+            document.body.classList.add("js-enabled");
+            const revealTargets = document.querySelectorAll(
+                ".section-heading, .about-copy, .about-principles, .stat-card, .workflow-card, .impact-card, .calculator, .journey-item, .feature-card, .gallery-item, .paper-card, .resource-card, .team-card, .contact-inner"
+            );
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: "0px 0px -36px 0px" });
+
+            revealTargets.forEach((element) => {
+                const siblings = [...element.parentElement.children].filter((sibling) => sibling.classList.contains(element.classList[0]));
+                const siblingIndex = siblings.indexOf(element);
+                element.style.setProperty("--reveal-delay", `${Math.min(siblingIndex, 3) * 65}ms`);
+                element.classList.add("reveal");
+                revealObserver.observe(element);
+            });
+        }
+    </script>
+</body>
+</html>
