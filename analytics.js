@@ -3,7 +3,7 @@
    2. Copy the Measurement ID (looks like G-ABC123XYZ4) and paste it below.
    Until then nothing is loaded and no data is collected. */
 (function () {
-    var GA_MEASUREMENT_ID = "";
+    var GA_MEASUREMENT_ID = "G-L1KLF4NYVN";
 
     if (!/^G-[A-Z0-9]{6,}$/.test(GA_MEASUREMENT_ID)) return;
     // Respect browsers sending Do Not Track
